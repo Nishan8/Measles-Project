@@ -5,7 +5,6 @@ void setup() {
   //Population
   //Them: i.e Face
   //Background Image with tint()
-  
 } //End Setup
 //
 void draw() {
