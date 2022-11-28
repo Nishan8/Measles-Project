@@ -15,9 +15,14 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
+  //keyBoard Shortcuts
 } //EndkeyPressed
 //
 void mousePressed() {
+  //OS System Start Button
+  //Splash Screen Start Button 
+  //Quit Button 
+  //Night Mode (includes day mode)
 } //End mousePressed
 //
 //End Main Program
