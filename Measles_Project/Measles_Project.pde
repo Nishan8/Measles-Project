@@ -12,7 +12,11 @@ void setup() {
   population();
   //Them: i.e Face (will work in portrait and landscape)
   faceSetup();
-  //Background Image with tint()
+  eyes();
+ nose();
+ mouth();
+ measlesDynamic();
+//Background Image with tint()
 } //End Setup
 //
 void draw() {
