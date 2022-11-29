@@ -1,13 +1,17 @@
 //Global Variables
+int appWidth, appHeight;
 //
 void setup() {
   //Display and Orientation
   size(600, 400);
   //fullscreen(); //displayWidth & displayHeight 
+  displayOrientation(); //need smaller dimension to (ternary operator)
   appWidth = width;
   appHeight = height;
-  //Population
+  //
+  population();
   //Them: i.e Face (will work in portrait and landscape)
+  faceSetup();
   //Background Image with tint()
 } //End Setup
 //
