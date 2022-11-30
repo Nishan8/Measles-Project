@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+color purple=#A020F0;
 //
 void setup() {
   //Display and Orientation
