@@ -12,6 +12,7 @@ void setup() {
   displayOrientation(); //need smaller dimension to (ternary operator)
   appWidth = width;
   appHeight = height;
+  img = loadImage("../Mouth2.png");  // Load the image into the program  
   //
   population();
   //Them: i.e Face (will work in portrait and landscape)
