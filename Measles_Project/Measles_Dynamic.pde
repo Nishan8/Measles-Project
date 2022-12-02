@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-void measlesDynamic() {
-} //End measlesDynamic
-=======
+ //End measlesDynamic
 float measleX, measleY, measleDiameter;
 color measlesColour;
 //
@@ -26,5 +23,4 @@ void measlesDynamic() {
   fill(resetWhite);
   stroke(reset);
 } //end measlesDynamic
->>>>>>> 06be9f8ed5326df9bf601880b1aee2a5c88a3646
 //
