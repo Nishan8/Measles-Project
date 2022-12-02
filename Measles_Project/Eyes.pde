@@ -1,10 +1,24 @@
+float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
+//
 void eyes() {
-    fill(purple);
-   ellipse(200, 100, 100, 100); //left eye 
-    ellipse(395, 100, 100, 100); //right eye 
-     fill(1);
+  leftEye();
+  rightEye();
+} //End eyes
+void leftEye() {
+  fill(purple);
+  ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
+} //End leftEye
+//
+void rightEye() {
+  fill(purple);
+  ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
+  //End rightEye
+  //
+  //Start Eye Middle
+  fill(1);
    ellipse(200, 100, 45, 45); //left eye middle
     ellipse(395, 100, 45, 45); //right eye middle
-} //end eyes
-//
-//End Eyes SubProgram
+    //End Eye Middle 
+    //
+} //End rightEye
+//End Eyes 
