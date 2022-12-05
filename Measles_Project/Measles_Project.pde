@@ -12,6 +12,9 @@ color rectColor, circleColor;
 color rectHighlight, circleHighlight;
 boolean rectOver = false;
 boolean circleOver = false;
+Boolean start=false, noNowReallyStart=false;
+float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+color quitButtonColour, green=#7AFF00 , blue=#0034EA ;
 //
 void setup() {
   //Display and Orientation
@@ -23,6 +26,7 @@ void setup() {
   img = loadImage("../Mouth2.png");  // Load the image into the program  
   //
   population();
+  population2();
   //Them: i.e Face (will work in portrait and landscape)
   faceSetup();
   //Background Image with tint()
@@ -34,8 +38,8 @@ void setup() {
  
   circleX = width/100+circleSize*1/2;
   circleY = height/3;
-  rectX = width/2-rectSize-10;
-  rectY = height/2-rectSize/2;
+  rectX = width/2-rectSize-200;
+  rectY = height/2-rectSize+100;
   ellipseMode(CENTER);
   //
 } //End Setup
@@ -93,6 +97,8 @@ void keyPressed() {
 } //EndkeyPressed
 //
 void mousePressed() {
+  if (noNowReallyStart==true && mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
+
   //Buttons
    if (circleOver) {
  
