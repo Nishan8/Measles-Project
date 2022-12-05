@@ -4,6 +4,14 @@ color purple=#A020F0;
 int reset=1;
 color resetWhite=#FFFFFF;
 Boolean nightMode=false;
+int rectX, rectY;      // Position of square button
+int circleX, circleY;  // Position of circle button
+int rectSize = 90;     // Diameter of rect
+int circleSize = 93;   // Diameter of circle
+color rectColor, circleColor;
+color rectHighlight, circleHighlight;
+boolean rectOver = false;
+boolean circleOver = false;
 //
 void setup() {
   //Display and Orientation
@@ -18,6 +26,18 @@ void setup() {
   //Them: i.e Face (will work in portrait and landscape)
   faceSetup();
   //Background Image with tint()
+  //BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS 
+   rectColor = color(300);
+  rectHighlight = color(51);
+  circleColor = color(255);
+  circleHighlight = color(204);
+ 
+  circleX = width/100+circleSize*1/2;
+  circleY = height/3;
+  rectX = width/2-rectSize-10;
+  rectY = height/2-rectSize/2;
+  ellipseMode(CENTER);
+  //
 } //End Setup
 //
 void draw() {
@@ -28,7 +48,38 @@ void draw() {
   eyes();
   nose();
   mouth();
+  ////Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons
+  update(mouseX, mouseY);
+
+  
+  if (rectOver) {
+   fill(rectHighlight);
+  } else {
+    fill(rectColor);
+   }
+  
+ rect(rectX, rectY, rectSize, rectSize);
+  if (circleOver) {
+    fill(circleHighlight);
+  } else {
+    fill(circleColor);
+  }
+  stroke(0);
+  ellipse(circleX, circleY, circleSize, circleSize);
+//Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons
 } //End draw
+//
+void update(int x, int y) {
+  if ( overCircle(circleX, circleY, circleSize) ) {
+    circleOver = true;
+    rectOver = false;
+  } else if ( overRect(rectX, rectY, rectSize, rectSize) ) {
+    rectOver = true;
+    circleOver = false;
+  } else {
+    circleOver = rectOver = false;
+  }
+}
 //
 void keyPressed() {
   //keyBoard Shortcuts
@@ -42,10 +93,36 @@ void keyPressed() {
 } //EndkeyPressed
 //
 void mousePressed() {
+  //Buttons
+   if (circleOver) {
+ 
+  }
+  if (rectOver) {
+  }
+}
+boolean overRect(int x, int y, int width, int height)  {
+  if (mouseX >= x && mouseX <= x+width && 
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+boolean overCircle(int x, int y, int diameter) {
+  float disX = x - mouseX;
+  float disY = y - mouseY;
+  if (sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+  //Buttons
   //OS System Start Button
   //Splash Screen Start Button 
   //Quit Button 
   //Night Mode (includes day mode)
-} //End mousePressed
+ //End mousePressed
 //
 //End Main Program
