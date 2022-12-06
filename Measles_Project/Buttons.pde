@@ -1,6 +1,4 @@
-//
-void Button() {
-  
-  
- 
-}// END Button
+void keyBoardShortCuts() {
+  if ( key=='Q' || key=='q' ) exit();
+  if ( keyCode == ESC ) exit();
+}//End debugLogicalRect

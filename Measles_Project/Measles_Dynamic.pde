@@ -1,4 +1,4 @@
- //End measlesDynamic
+
 float measleX, measleY, measleDiameter;
 color measlesColour;
 //

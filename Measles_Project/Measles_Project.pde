@@ -8,12 +8,15 @@ int rectSize = 90;     // Diameter of rect
 int circleSize = 93;   // Diameter of circle
 color rectColor, circleColor, rectHighlight, circleHighlight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+Boolean MEASLES=false, Reset=false;
 //
 void setup() {
   //Display and Orientation
   size(600, 400);
   //fullscreen(); //displayWidth & displayHeight 
   displayOrientation(); //need smaller dimension to (ternary operator)
+  OS_Start();
+  quitButtonHoverOver() ;
   appWidth = width;
   appHeight = height;
   img = loadImage("../Mouth2.png");  // Load the image into the program  
@@ -41,7 +44,12 @@ void draw() {
   //OS System Start Button
   //Splash Screen Level start button | Measles Reset Button
   //Theme: measleqs with different sizes and colours 
-  measlesDynamic();
+if ( MEASLES==true ) { //Actual start IF
+   measlesDynamic();
+  } //End IF-Start
+  //if ( Reset==true ) { //Actual start IF
+  } //End IF-Start 
+  ///////CHECK AFTER
   eyes();
   nose();
   mouth();
@@ -79,21 +87,25 @@ void update(int x, int y) {
 }
 //
 void keyPressed() {
+  keyBoardShortCuts();
   //keyBoard Shortcuts
-  if ( key==' ' && start==true ) noNowReallyStart = true;
-   if ( keyCode == UP && start==true ) noNowReallyStart = true;
-  if ( key=='N'| key=='n') {
+  //if ( key==' ' && start==true ) noNowReallyStart = true;
+  // if ( keyCode == UP && start==true ) noNowReallyStart = true;
+    if (  key == CODED && keyCode == UP ) MEASLES=true; //START MEASLES
+    if ( key == CODED && keyCode == DOWN ) MEASLES=false; //STOP MEASLES
+    if ( key == 'N' || key == 'n' ) Reset=true;
     if (nightMode==false ) {
       nightMode = true;
     } else {
       nightMode=false;
     }
   }
-} //EndkeyPressed
+  
+ //EndkeyPressed
 //
 void mousePressed() {
   if (noNowReallyStart==true && mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
-
+ 
   //Buttons
    if (circleOver) {
  
