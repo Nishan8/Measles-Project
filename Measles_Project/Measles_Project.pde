@@ -1,20 +1,13 @@
 //Global Variables
-int appWidth, appHeight;
-color purple=#A020F0;
-int reset=1;
-color resetWhite=#FFFFFF;
-Boolean nightMode=false;
+int appWidth, appHeight, reset=1;;
+color purple=#A020F0, resetWhite=#FFFFFF, quitButtonColour, green=#7AFF00 , blue=#0034EA ;
+Boolean nightMode=false, rectOver = false, circleOver = false, start=false, noNowReallyStart=false;
 int rectX, rectY;      // Position of square button
 int circleX, circleY;  // Position of circle button
 int rectSize = 90;     // Diameter of rect
 int circleSize = 93;   // Diameter of circle
-color rectColor, circleColor;
-color rectHighlight, circleHighlight;
-boolean rectOver = false;
-boolean circleOver = false;
-Boolean start=false, noNowReallyStart=false;
+color rectColor, circleColor, rectHighlight, circleHighlight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
-color quitButtonColour, green=#7AFF00 , blue=#0034EA ;
 //
 void setup() {
   //Display and Orientation
@@ -87,6 +80,8 @@ void update(int x, int y) {
 //
 void keyPressed() {
   //keyBoard Shortcuts
+  if ( key==' ' && start==true ) noNowReallyStart = true;
+   if ( keyCode == UP && start==true ) noNowReallyStart = true;
   if ( key=='N'| key=='n') {
     if (nightMode==false ) {
       nightMode = true;
