@@ -1,4 +1,6 @@
 //Global Variables
+float rectFaceX, rectFaceY, rectFaceWidth, rectFaceHeight;
+float faceX, faceY, faceDiameter;
 int appWidth, appHeight, reset=1;;
 color purple=#A020F0, resetWhite=#FFFFFF, quitButtonColour, green=#7AFF00 , blue=#0034EA ;
 Boolean nightMode=false, rectOver = false, circleOver = false, start=false, noNowReallyStart=false;
@@ -8,7 +10,9 @@ int rectSize = 90;     // Diameter of rect
 int circleSize = 93;   // Diameter of circle
 color rectColor, circleColor, rectHighlight, circleHighlight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
-Boolean MEASLES=false, Reset=false;
+Boolean MEASLES=false, Reset=false, MEASLES2=false;
+float measleX, measleY, measleDiameter;
+ float measleRadius = measleDiameter * 1/2;
 //
 void setup() {
   //Display and Orientation
@@ -47,7 +51,11 @@ void draw() {
 if ( MEASLES==true ) { //Actual start IF
    measlesDynamic();
   } //End IF-Start
-  //if ( Reset==true ) { //Actual start IF
+  if ( MEASLES2==true ) { //Actual start IF
+   measlesDynamic2();
+  } //End IF-Start
+  if ( Reset==true ) { //Actual start IF
+  Redrawshape();
   } //End IF-Start 
   ///////CHECK AFTER
   eyes();
@@ -93,7 +101,9 @@ void keyPressed() {
   // if ( keyCode == UP && start==true ) noNowReallyStart = true;
     if (  key == CODED && keyCode == UP ) MEASLES=true; //START MEASLES
     if ( key == CODED && keyCode == DOWN ) MEASLES=false; //STOP MEASLES
-    if ( key == 'N' || key == 'n' ) Reset=true;
+    if (  key == CODED && keyCode == RIGHT ) MEASLES2=true; //START MEASLES
+    if ( key == CODED && keyCode == LEFT ) MEASLES2=false; //STOP MEASLES
+    if ( key == 'R' || key == 'r' ) Reset=true;
     if (nightMode==false ) {
       nightMode = true;
     } else {
