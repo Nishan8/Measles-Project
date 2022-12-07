@@ -16,6 +16,7 @@ float measleX, measleY, measleDiameter;
 //
 void setup() {
   //Display and Orientation
+  fill(255);
   size(600, 400);
   //fullscreen(); //displayWidth & displayHeight 
   displayOrientation(); //need smaller dimension to (ternary operator)
